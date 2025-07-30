@@ -14,7 +14,7 @@ public class TrashInfo : MonoBehaviour
     }
     public void Update()
     {
-        if (transform.position.y < -50)
+        if (transform.position.y < -15)
         {
             Respawn();
         }
