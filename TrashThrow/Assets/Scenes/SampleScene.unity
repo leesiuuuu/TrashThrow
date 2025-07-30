@@ -857,12 +857,12 @@ GameObject:
   - component: {fileID: 121393779}
   - component: {fileID: 121393778}
   - component: {fileID: 121393777}
-  - component: {fileID: 121393776}
+  - component: {fileID: 121393782}
   - component: {fileID: 121393775}
   - component: {fileID: 121393774}
   - component: {fileID: 121393781}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Cube (1)'
+  m_Name: CrackBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -898,8 +898,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121393773}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 0.7
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -917,27 +917,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &121393776
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121393773}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &121393777
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -958,7 +937,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0f29e3c1c576f6641b9e474f6b194480, type: 2}
+  - {fileID: 2100000, guid: f3730cdbaacb4d3449622942d780795c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -987,7 +966,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121393773}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: 3d42a1377aa4ec040bb947ff500c22c8, type: 3}
 --- !u!114 &121393779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,14 +993,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121393773}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.505, y: 1.055, z: 0.769}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0.18746705, z: 0, w: 0.9822709}
+  m_LocalPosition: {x: -0.586, y: 1.055, z: 0.777}
+  m_LocalScale: {x: 3.3900003, y: 3.3900003, z: 3.3900003}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1808355914}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 21.61, z: 0}
 --- !u!114 &121393781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1035,6 +1014,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashSO: {fileID: 11400000, guid: ce668c708aadecb40af48a27ebf1f99a, type: 2}
+--- !u!65 &121393782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121393773}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.045400973, y: 0.025175177, z: 0.044030227}
+  m_Center: {x: -0.0000158865, y: -0.00000024633482, z: 0.0120423995}
 --- !u!1 &124434903
 GameObject:
   m_ObjectHideFlags: 0
@@ -11467,12 +11467,12 @@ GameObject:
   - component: {fileID: 1924082388}
   - component: {fileID: 1924082387}
   - component: {fileID: 1924082386}
-  - component: {fileID: 1924082385}
   - component: {fileID: 1924082384}
+  - component: {fileID: 1924082391}
   - component: {fileID: 1924082383}
   - component: {fileID: 1924082390}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Cube (2)'
+  m_Name: PaperMung
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11508,8 +11508,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924082382}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 0.4
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -11527,27 +11527,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1924082385
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924082382}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1924082386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11568,7 +11547,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bce32739db90b6843ac7f0179bcaa6b7, type: 2}
+  - {fileID: 2100000, guid: e3de40256a1fbf1418771d6c3f8c6cff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11597,7 +11576,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924082382}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -1579241630799410176, guid: 027063bb79a909f41a05aded75ce147f, type: 3}
 --- !u!114 &1924082388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11626,8 +11605,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.505, y: 1.055, z: 1.064}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5.79, y: 5.79, z: 5.79}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 38401688}
   m_Father: {fileID: 0}
@@ -11645,6 +11624,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashSO: {fileID: 11400000, guid: cd8d44296941ca049b257287485a2f27, type: 2}
+--- !u!64 &1924082391
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924082382}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1579241630799410176, guid: 027063bb79a909f41a05aded75ce147f, type: 3}
 --- !u!1 &1925264201
 GameObject:
   m_ObjectHideFlags: 0
@@ -11810,7 +11811,7 @@ GameObject:
   - component: {fileID: 1963547612}
   - component: {fileID: 1963547619}
   m_Layer: 0
-  m_Name: '[BuildingBlock] Cube'
+  m_Name: Bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11846,8 +11847,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963547611}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 1.5
+  m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -11885,7 +11886,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 4181ee6c21a11fe4a8ad505eb2b477eb, type: 3}
+  - {fileID: 2100000, guid: 6fe3c9adec0b001468969b10232b2998, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
