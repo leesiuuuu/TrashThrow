@@ -9,6 +9,7 @@ public class TrashInfo : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        RigidSet();
         SpawnPos = transform.position;
         SpawnRot = transform.rotation;
     }
@@ -32,5 +33,10 @@ public class TrashInfo : MonoBehaviour
         transform.rotation = SpawnRot;
         transform.position = SpawnPos;
         rigidbody.velocity = Vector3.zero;
+    }
+
+    private void RigidSet()
+    {
+        rigidbody.mass = 3 * ((int)trashSO.weight + 1);
     }
 }
