@@ -112,6 +112,6 @@ public class TrashInfo : MonoBehaviour
 
     private void RigidSet()
     {
-        rigidbody.mass = ((int)trashSO.weight + 1);
+        rigidbody.mass = 3 * ((int)trashSO.weight + 1);
     }
 }
