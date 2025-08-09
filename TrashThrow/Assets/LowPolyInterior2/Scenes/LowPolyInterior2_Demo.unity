@@ -10284,6 +10284,7 @@ GameObject:
   - component: {fileID: 422515610}
   - component: {fileID: 422515609}
   - component: {fileID: 422515608}
+  - component: {fileID: 422515613}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -10446,6 +10447,23 @@ Transform:
   - {fileID: 1937041768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 208.78, z: 0}
+--- !u!114 &422515613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422515607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c525a7f47f33e74395b2acebdf41afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transforms:
+  - {fileID: 1341466618}
+  - {fileID: 705153263}
+  - {fileID: 661463345}
+  - {fileID: 1907120780}
 --- !u!1001 &422826918
 PrefabInstance:
   m_ObjectHideFlags: 0
