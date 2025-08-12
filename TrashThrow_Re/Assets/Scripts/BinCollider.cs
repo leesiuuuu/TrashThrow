@@ -9,7 +9,7 @@ public class BinCollider : MonoBehaviour
         TrashInfo info = other.GetComponent<TrashInfo>();
         TrashSO trashSO = info.trashSO;
         scoreUI.gameObject.SetActive(true);
-        scoreUI.ShowScore(100 * (3 - (int)trashSO.Size));
+        scoreUI.ShowScore(100 * (3 - (int)trashSO.Size), 50 * Mathf.Abs(5 - info.CollideCount));
         info.Respawn();
     }
 }

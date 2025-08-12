@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shoes
   m_EditorClassIdentifier: 
   Name: 
-  Size: 0
-  Weight: 0
+  Size: 2
+  Weight: 3

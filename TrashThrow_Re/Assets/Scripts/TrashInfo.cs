@@ -18,7 +18,8 @@ public class TrashInfo : MonoBehaviour
     public float stillDuration = 0.5f;
     public float stillVelocityThreshold = 0.05f;
 
-    private float StillTime = 0f;
+    public int CollideCount = 0;
+
     private XRGrabInteractable xRGrabInteractable;
 
     private void Start()
@@ -54,6 +55,8 @@ public class TrashInfo : MonoBehaviour
         {
             string tag = collision.gameObject.tag;
             if (tag == "Table" || tag == "Obj") return;
+
+            CollideCount++;
 
             StartCoroutine(CheckStillBeforeRespawn());
         }
@@ -127,6 +130,7 @@ public class TrashInfo : MonoBehaviour
         }
 
         isRespawn = false;
+        CollideCount = 0;
     }
 
     private void RigidSet()

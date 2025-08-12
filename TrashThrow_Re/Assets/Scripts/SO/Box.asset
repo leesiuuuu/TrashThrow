@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Box
   m_EditorClassIdentifier: 
   Name: 
-  Size: 0
-  Weight: 0
+  Size: 1
+  Weight: 2
