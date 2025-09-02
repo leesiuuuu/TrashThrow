@@ -167,6 +167,7 @@ MonoBehaviour:
   stillDuration: 0.5
   stillVelocityThreshold: 0.05
   CollideCount: 0
+  BoopSFX: {fileID: 8300000, guid: cb9ee60b5b64e7f44bbf6e4e7d8fb038, type: 3}
 --- !u!114 &-4732689400283326484
 MonoBehaviour:
   m_ObjectHideFlags: 0

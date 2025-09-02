@@ -20,6 +20,8 @@ public class TrashInfo : MonoBehaviour
 
     public int CollideCount = 0;
 
+    public AudioClip BoopSFX;
+
     private XRGrabInteractable xRGrabInteractable;
 
     private void Start()
@@ -54,6 +56,7 @@ public class TrashInfo : MonoBehaviour
         if (!isRespawn)
         {
             string tag = collision.gameObject.tag;
+            //SoundManager.Instance.SFXPlay("boop", BoopSFX);
             if (tag == "Table" || tag == "Obj") return;
 
             CollideCount++;
