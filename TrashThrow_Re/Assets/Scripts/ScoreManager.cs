@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +20,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject ResultTitle;
     [Header("시간 표시 UI")]
     public Text TimerText;
-    public Text CountText;
-    public Text GameOverText;
+    public TMP_Text CountText;
+    public TMP_Text GameOverText;
 
     public Text scoreText;
     public Text ResultText;

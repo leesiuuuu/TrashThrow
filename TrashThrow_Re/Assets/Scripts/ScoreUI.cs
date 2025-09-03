@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using System.Collections;
 
 public class ScoreUI : MonoBehaviour
 {
@@ -14,27 +15,18 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
         scoreText.color = new Color(1f, 1f, 1f, 0f);
-        subText.color = new Color(1f, 1f, 1f, 0f);
         if (scoreManager == null)
             scoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    public void ShowScore(int score, int subScore)
+    public IEnumerator ShowScore(int score, int subScore)
     {
-        if (uIAppear) return;
+        if (uIAppear) yield return null;
 
         int finalScore = score + subScore;
 
         uIAppear = true;
 
-        if (subScore != 0)
-        {
-            subText.text = "+" + subScore.ToString();
-            subText.DOFade(1f, 0.5f).OnComplete(() =>
-            {
-                subText.DOFade(0f, 0.5f);
-            });
-        }
 
         scoreText.text = score.ToString();
         scoreText.DOFade(1f, 0.5f).OnComplete(() =>
@@ -44,6 +36,17 @@ public class ScoreUI : MonoBehaviour
                 uIAppear = false;
             });
         });
+
+        if (subScore != 0)
+        {
+            subText.rectTransform.localScale = Vector3.zero;
+            subText.color = Color.white;
+            subText.text = "+" + subScore.ToString();
+            subText.rectTransform.DOScale(1f, 0.5f).OnComplete(() =>
+            {
+                subText.DOFade(0f, 0.5f);
+            }).SetDelay(0.3f).SetEase(Ease.OutCubic);
+        }
         scoreManager.AddScore(finalScore);
     }
 }

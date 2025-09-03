@@ -15,7 +15,7 @@ public class BinCollider : MonoBehaviour
             TrashSO trashSO = info.trashSO;
             particle.Play();
             scoreUI.gameObject.SetActive(true);
-            scoreUI.ShowScore(BasicScore * (3 - (int)trashSO.Size), 50 * Mathf.Abs(5 - info.CollideCount));
+            StartCoroutine(scoreUI.ShowScore(BasicScore * (3 - (int)trashSO.Size), 50 * Mathf.Abs(5 - info.CollideCount)));
             info.Respawn();
         }
     }
