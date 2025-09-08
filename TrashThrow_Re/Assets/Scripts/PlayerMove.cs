@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        movePos(0);
     }
 
     public void MovePos(int n)
@@ -25,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     private void movePos(int n)
     {
         transform.position = transforms[n].position;
+        transform.rotation = transforms[n].rotation;
         FindObjectOfType<ScoreManager>().ResetScore();
         fader.FadeOut(null);
     }

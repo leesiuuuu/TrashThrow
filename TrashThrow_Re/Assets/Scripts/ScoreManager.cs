@@ -2,7 +2,6 @@ using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -19,13 +18,13 @@ public class ScoreManager : MonoBehaviour
     public GameObject ResultPanel;
     public GameObject ResultTitle;
     [Header("시간 표시 UI")]
-    public Text TimerText;
+    public TMP_Text TimerText;
     public TMP_Text CountText;
     public TMP_Text GameOverText;
 
-    public Text scoreText;
-    public Text ResultText;
-    public Text ResultTimeText;
+    public TMP_Text scoreText;
+    public TMP_Text ResultText;
+    public TMP_Text ResultTimeText;
 
     private bool isGameEnded = false;
     [HideInInspector]
@@ -140,9 +139,11 @@ public class ScoreManager : MonoBehaviour
 
     private string Result(float time)
     {
-        if (time > 100) return "A";
-        else if (time <= 100 && time > 50) return "B";
-        else if (time >= 50 && time <= 0.01) return "C";
+        if (time > 165) return "GOAT";
+        else if (time <= 165 && time > 130) return "S";
+        else if (time <= 130 && time > 95) return "A";
+        else if (time <= 95 && time > 60) return "B";
+        else if (time <= 60 && time >= 0.01) return "C";
         else return "F";
     }
 }
