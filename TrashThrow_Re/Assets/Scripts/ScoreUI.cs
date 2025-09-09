@@ -10,6 +10,8 @@ public class ScoreUI : MonoBehaviour
     private TextMeshPro scoreText;
     [SerializeField]
     private TextMeshPro subText;
+    [SerializeField]
+    private TextMeshPro comboText;
 
     private bool uIAppear = false;
     private void Start()
@@ -19,7 +21,7 @@ public class ScoreUI : MonoBehaviour
             scoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    public IEnumerator ShowScore(int score, int subScore)
+    public IEnumerator ShowScore(int score, int subScore, int Combo)
     {
         if (uIAppear) yield return null;
 
@@ -47,6 +49,17 @@ public class ScoreUI : MonoBehaviour
                 subText.DOFade(0f, 0.5f);
             }).SetDelay(0.3f).SetEase(Ease.OutCubic);
         }
+        if (Combo + 1 > 1)
+        {
+            comboText.rectTransform.localScale = Vector3.zero;
+            comboText.color = Color.white;
+            comboText.text = $"{Combo} COMBO";
+            comboText.rectTransform.DOScale(1f, 0.5f).OnComplete(() =>
+            {
+                comboText.DOFade(0f, 0.5f);
+            }).SetDelay(0.3f).SetEase(Ease.OutCubic);
+        }
+
         scoreManager.AddScore(finalScore);
     }
 }

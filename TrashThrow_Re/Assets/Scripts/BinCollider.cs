@@ -7,6 +7,12 @@ public class BinCollider : MonoBehaviour
     private ScoreUI scoreUI;
     [SerializeField]
     private ParticleSystem particle;
+    [SerializeField]
+    private int ComboScore = 10;
+
+    private float ComboTime = 0f;
+    private int ComboStack = -1;
+    private float ComboDuration = 2f;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Obj"))
@@ -15,8 +21,27 @@ public class BinCollider : MonoBehaviour
             TrashSO trashSO = info.trashSO;
             particle.Play();
             scoreUI.gameObject.SetActive(true);
-            StartCoroutine(scoreUI.ShowScore(BasicScore * (3 - (int)trashSO.Size), 50 * Mathf.Abs(5 - info.CollideCount)));
+            ++ComboStack;
+            Debug.Log(ComboStack);
+        StartCoroutine(scoreUI.ShowScore(
+                BasicScore * (3 - (int)trashSO.Size),
+                (50 * Mathf.Abs(5 - info.CollideCount)) +
+                ComboScore * ComboStack,
+                ComboStack));
             info.Respawn();
+        }
+    }
+
+    private void Update()
+    {
+        if (ComboStack > -1 && ComboTime <= ComboDuration)
+        {
+            ComboTime += Time.deltaTime;
+        }
+        else
+        {
+            ComboTime = 0f;
+            ComboStack = -1;
         }
     }
 }

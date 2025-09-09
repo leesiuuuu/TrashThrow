@@ -60,6 +60,7 @@ public class ScoreManager : MonoBehaviour
 
         Button.SetActive(false);
 
+        Score = 0;
         scoreText.text = "0";
         StartCoroutine(Timer());
     }
