@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text ResultText;
     public TMP_Text ResultTimeText;
-
+    [SerializeField]
     private bool isGameEnded = false;
     [HideInInspector]
     public string Rank;
@@ -47,6 +47,8 @@ public class ScoreManager : MonoBehaviour
         NormalTitle.SetActive(true);
 
         Score = 0;
+
+        TimerText.text = "00:00.00";
         Rank = "";
     }
 
@@ -62,6 +64,7 @@ public class ScoreManager : MonoBehaviour
 
         Score = 0;
         scoreText.text = "0";
+        TimerText.text = "00:00.00";
         StartCoroutine(Timer());
     }
 
@@ -87,6 +90,7 @@ public class ScoreManager : MonoBehaviour
     private IEnumerator Timer()
     {
         CountText.DOFade(1f, 0.5f);
+        isGameEnded = false;
         for (int i = 3; i > 0; i--)
         {
             CountText.text = i.ToString();
@@ -108,7 +112,7 @@ public class ScoreManager : MonoBehaviour
             yield return null;
         }
 
-        if(Score >= 3000)
+        if (Score >= 3000)
             GameOverText.text = "GAME CLEAR!";
         else
             GameOverText.text = "GAME OVER";
@@ -124,6 +128,8 @@ public class ScoreManager : MonoBehaviour
 
         ResultText.text = Rank;
         ResultTimeText.text = ChangeTime(180f - ElapsedTime);
+
+        yield break;
     }
 
     private void TimerUI(float currentTime)
