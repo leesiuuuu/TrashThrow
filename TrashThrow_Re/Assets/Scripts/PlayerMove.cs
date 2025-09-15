@@ -1,18 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.TextCore.Text;
 
 public class PlayerMove : MonoBehaviour
 {
     public Transform[] transforms;
     public Fader fader;
     private CharacterController controller;
+    private ScoreManager scoreManager;
 
     private int CurrentRoom;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         movePos(0);
     }
 
@@ -27,7 +28,7 @@ public class PlayerMove : MonoBehaviour
     {
         transform.position = transforms[n].position;
         transform.rotation = transforms[n].rotation;
-        FindObjectOfType<ScoreManager>().ResetScore();
+        scoreManager.ResetScore();
         fader.FadeOut(null);
     }
     public void GoGamePos()
@@ -36,7 +37,7 @@ public class PlayerMove : MonoBehaviour
         e.AddListener(() =>
         {
             movePos(CurrentRoom);
-            FindObjectOfType<ScoreManager>().GameStart();
+            scoreManager.GameStart();
             MoveDisable();
         });
         fader.FadeIn(e);
