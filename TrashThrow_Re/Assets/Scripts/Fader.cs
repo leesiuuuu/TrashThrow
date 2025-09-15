@@ -22,4 +22,13 @@ public class Fader : MonoBehaviour
     {
         Panel.DOFade(0f, FadeOutDuration).OnComplete(() => e?.Invoke());
     }
+    public void FadeAndEnd()
+    {
+        UnityEvent e = new UnityEvent();
+        e.AddListener(() =>
+        {
+            Application.Quit();
+        });
+        FadeIn(e);
+    }
 }
