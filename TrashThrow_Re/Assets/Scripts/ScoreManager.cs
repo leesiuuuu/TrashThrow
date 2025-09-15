@@ -30,6 +30,11 @@ public class ScoreManager : MonoBehaviour
     [HideInInspector]
     public string Rank;
 
+    public AudioClip EndSFX;
+    public AudioClip StartSFX;
+    public AudioClip CountSFX;
+    public AudioClip CongSFX;
+
     public void AddScore(int score)
     {
         this.Score += score;
@@ -77,6 +82,8 @@ public class ScoreManager : MonoBehaviour
         ResultTitle.SetActive(true);
 
         MainBtn.SetActive(true);
+
+        SoundManager.Instance.SFXPlay("EndGame", EndSFX);
     }
 
     void Update()
@@ -94,9 +101,11 @@ public class ScoreManager : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             CountText.text = i.ToString();
+            SoundManager.Instance.SFXPlay("Count", CountSFX);
             yield return new WaitForSeconds(1f);
         }
 
+        SoundManager.Instance.SFXPlay("StartGame", StartSFX);
         CountText.text = "GO!";
         CountText.DOFade(0f, 0.5f).OnComplete(() =>
         {
@@ -123,6 +132,9 @@ public class ScoreManager : MonoBehaviour
         GameOverText.text = "";
 
         Rank = Result(ElapsedTime);
+        if(ElapsedTime > 95 && ElapsedTime <= 180){
+            SoundManager.Instance.SFXPlay("Cong", CongSFX);
+        }
 
         GameEnd();
 

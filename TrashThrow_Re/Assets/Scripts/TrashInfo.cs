@@ -20,7 +20,8 @@ public class TrashInfo : MonoBehaviour
 
     public int CollideCount = 0;
 
-    public AudioClip BoopSFX;
+    public AudioClip HoverSF;
+    public AudioClip GrabSFX;
 
     private XRGrabInteractable xRGrabInteractable;
 
@@ -56,7 +57,6 @@ public class TrashInfo : MonoBehaviour
         if (!isRespawn)
         {
             string tag = collision.gameObject.tag;
-            //SoundManager.Instance.SFXPlay("boop", BoopSFX);
             if (tag == "Table" || tag == "Obj") return;
 
             CollideCount++;
@@ -139,5 +139,13 @@ public class TrashInfo : MonoBehaviour
     private void RigidSet()
     {
         rigidbody.mass = 2 * ((int)trashSO.Weight + 1);
+    }
+
+    public void GrabSound(){
+        SoundManager.Instance.SFXPlay("Grab", GrabSFX);
+    }
+
+    public void HoverSFX(){
+        SoundManager.Instance.SFXPlay("Hover", HoverSF);
     }
 }

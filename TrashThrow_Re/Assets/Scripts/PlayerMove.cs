@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     public Transform[] transforms;
     public Fader fader;
+    public Speaker speaker;
     private CharacterController controller;
     private ScoreManager scoreManager;
 
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
         transform.position = transforms[n].position;
         transform.rotation = transforms[n].rotation;
         scoreManager.ResetScore();
+        speaker.MusicChange(n);
         fader.FadeOut(null);
     }
     public void GoGamePos()

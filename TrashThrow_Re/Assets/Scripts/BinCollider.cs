@@ -10,6 +10,9 @@ public class BinCollider : MonoBehaviour
     [SerializeField]
     private int ComboScore = 10;
 
+    [SerializeField]
+    private AudioClip clip;
+
     private float ComboTime = 0f;
     private int ComboStack = -1;
     private float ComboDuration = 2f;
@@ -23,6 +26,7 @@ public class BinCollider : MonoBehaviour
             scoreUI.gameObject.SetActive(true);
             ++ComboStack;
             Debug.Log(ComboStack);
+            SoundManager.Instance.SFXPlay("goalIN", clip);
         StartCoroutine(scoreUI.ShowScore(
                 BasicScore * (3 - (int)trashSO.Size),
                 (50 * Mathf.Abs(5 - info.CollideCount)) +
